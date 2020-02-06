@@ -16,8 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-    if(username === "") return;
+    if(username !== "") return;
     fetchJoke()
     newJokeLi.innerHTML = `
     <span class="username">${username} says:</span> ${joke}
